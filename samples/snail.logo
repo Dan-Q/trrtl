@@ -1,0 +1,92 @@
+#
+# snail.logo
+#
+# Draws a cute and only slightly huge-headed gastropod.
+#
+
+clear()
+home()
+turtle hide
+
+# Shell
+color 'yellow'
+for n in [1..(360 * 3.75)]
+  forward (n / 360)
+  right 1
+
+# Body and head
+color 'white'
+forward 300
+for n in [1..45]
+  forward 1
+  right 1
+for n in [1..90]
+  forward 2
+  right 0.5
+for n in [1..180]
+  forward 2
+  right 1
+forward 7
+for n in [1..180]
+  forward 1
+  left 0.5
+forward 80
+
+# Move to tail
+pen up
+forward 130
+
+# Tail
+pen down
+forward 40
+for n in [1..90]
+  forward 1
+  right 1
+forward 1.5
+right 90
+forward 225
+
+# Move to eyes
+pen up
+right 32
+forward 410
+
+# Eyes
+pen down
+color 'lightgreen'
+for n in [1..360]
+  forward 0.2
+  right 1
+pen up
+left 32
+backward 60
+right 32
+pen down
+for n in [1..360]
+  forward 0.2
+  right 1
+
+# Move to antenna
+pen up
+forward 105
+
+# Antenna
+pen down
+color 'lightblue'
+for n in [1..58]
+  forward (0.05 * n)
+  right 1
+left 90
+for n in [1..360]
+  forward 0.1
+  right 1
+pen up
+backward 186
+pen down
+for n in [1..360]
+  forward 0.1
+  right 1
+left 90
+for n in [1..58]
+  forward (0.05 * (59-n))
+  right 1

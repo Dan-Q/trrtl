@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>TRRTL.COM Help</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="../css/trrtl-help.css" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/png" href="/img/icons/trrtl.png" sizes="22x22" />
+  <base target="_parent" />
+</head>
+<body>
+  <h1>TRRTL.COM Help</h1>
+
+  <h2 id="history">History</h2>
+  <p>
+    Throughout the 1970s and 1980s many children's first experience of computer programming came
+    from <a href="https://en.wikipedia.org/wiki/Logo_(programming_language)">Logo</a>, a
+    general-purpose interpreted language most-famous for its graphical capabilities. With these,
+    students could instruct a graphical "turtle" (or a physical hardware robot) to draw straight
+    lines and turn corners.
+  </p>
+  <p>
+    Logo is little-used today, but <a href="https://danq.me/" rel="author">I</a> thought that it could benefit
+    from a modern, web-based reimagining. And because I apparently never got over Web 2.0-style
+    names, it's called TRRTL.
+  </p>
+
+  <h2 id="compatibility">Compatibility</h2>
+  <p>
+    This site works on modern desktop browsers and some mobile browsers (mobile Chrome has
+    reduced functionality because it does not support <code>keypress</code> events).
+  </p>
+
+  <h2 id="getting-started">Getting Started</h2>
+  <p>
+    Type commands to the turtle to tell it what to do. Commands are case-sensitive.
+    For example:
+  </p>
+  <dl>
+    <dt><code>forward 100</code></dt>
+    <dd>
+      Move the turtle forward 100 turtle-steps. Like all movement, the turtle will usually
+      drag a pen as it goes, leaving a line.
+      Aliases: <code>fwd</code> / <code>fd</code>
+    </dd>
+
+    <dt><code>backward 50</code></dt>
+    <dd>
+      Reverse the turtle by 50 turtle-steps.
+      Aliases: <code>bwd</code> / <code>bd</code>
+    </dd>
+
+    <dt><code>right 90</code></dt>
+    <dd>
+      Turns the turtle right by 90 degrees (one quarter-turn).
+      Alias: <code>rt</code>
+    </dd>
+
+    <dt><code>left 45</code></dt>
+    <dd>
+      Turns the turtle left by 45 degrees (one eighth-turn).
+      Alias: <code>rt</code>
+    </dd>
+
+    <dt><code>pen up</code> / <code>pen down</code></dt>
+    <dd>
+      Raises or lower's the turtle's pen. The pen starts "down" but can be lifted "up"
+      to allow the turtle to move without drawing a line. Put it "down" again to
+      continue drawing.
+    </dd>
+
+    <dt><code>colour 'red'</code></dt>
+    <dd>
+      Changes the colour of the pen used by the turtle. Within the quotes you can
+      specify any of the 140 named <abbr title="HyperText Markup Language">HTML</abbr>
+      colours (e.g. <code>lightblue</code>, <code>rebeccapurple</code>) or a hex
+      code (e.g. <code>#ffb6c1</code>).
+      Alias: <code>color</code>
+    </dd>
+
+    <dt><code>turtle show</code> / <code>turtle hide</code></dt>
+    <dd>
+      Shows or hides the turtle; hide it to show off your artwork.
+    </dd>
+
+    <dt><code>clear()</code></dt>
+    <dd>
+      Clears the canvas but leaves the turtle in place.
+      Note the parentheses <code>()</code>.
+    </dd>
+
+    <dt><code>home()</code></dt>
+    <dd>
+      Teleports the turtle to its starting position and orientation, resetting the
+      pen colour, state, and turtle visibility.
+      Note the parentheses <code>()</code>.
+    </dd>
+
+    <dt><code>reset()</code></dt>
+    <dd>
+      Shorthand for performing a <code>clear()</code> followed by a <code>home()</code>.
+      Note the parentheses <code>()</code>. You can also perform a <code>reset()</code>
+      by clicking the "reset" button near the bottom right of the screen.
+    </dd>
+  </dl>
+
+  <h2 id="advanced-drawing">Advanced Drawing</h2>
+  <p>
+    Additional drawing commands include:
+  </p>
+  <dl>
+    <dt><code>moveX 100</code></dt>
+    <dd>
+      Teleports the turtle by moving the X (horizonal) coordinate of the its position
+      to 100 steps right of the starting position.
+    </dd>
+
+    <dt><code>moveY -50</code></dt>
+    <dd>
+      Teleports the turtle by moving the Y (vertical) coordinate of the its position
+      to 50 steps up from the starting position.
+    </dd>
+
+    <dt><code>setAngle 180</code></dt>
+    <dd>
+      Turns the turtle to exactly face the specified angle as measured in degrees from
+      the starting orientation of "straight up". Setting the angle to 180 means turning
+      the turtle to face "staight down", regardless of its prior orientation, for example.
+    </dd>
+
+    <dt><code>arc 90, 120</code></dt>
+    <dd>
+      Without moving the turtle, draws a 90 arc at a radius of 120 steps. The arc is drawn
+      clockwise from a position "ahead" of the turtle (i.e. the turtle is at the centre).
+      So <code>arc 360, 50</code> draws a complete circle around the turtle with a radius
+      of 50 steps and <code>arc 180, 30</code> draws a smaller semicircle only to the right
+      of the turtle.
+    </dd>
+
+    <dt><code>print 'hello, turtle'</code></dt>
+    <dd>
+      Prints a value to the screen. This can be a string (text enclosed in single or double
+      quotes), expression (e.g. <code>print 4+3</code>), or variable.
+    </dd>
+  </dl>
+
+  <h2 id="state-and-sharing">State and Sharing</h2>
+  <p>
+    Every command you execute is recorded in an array, <code>commandHistory</code>, and this
+    is encoded into the address bar. This allows you to save yor state and carry on where you
+    left off simply by bookmarking the <abbr title="Uniform Resource Locator">URL</abbr>, or
+    share your work with a friend by sending it to them.
+  </p>
+  <p>
+    When you <code>reset()</code>, this information is discarded.
+  </p>
+
+  <h2 id="advanced-programming">Advanced Programming</h2>
+  <p>
+    When you program TRRTL, you're actually writing
+    <a href="https://coffeescript.org/">CoffeeScript</a>, a lightweight language language atop
+    JavaScript. In addition to writing code a line at a time into the TRRTL terminal, the
+    capability exists to write longer problems in a more developer-friendly way. Leveraging
+    CoffeeScript gives you loops, arrays, conditional logic, arbritrary variables, and more.
+    See the samples below for some ideas.
+  </p>
+  <p>
+    Clicking the "code editor" button near the bottom right of the screen pops up a large box
+    into which you can write or copy-paste a multiline program. Click the green "play" button
+    to run it. The program will remain in the code editor if you want to return to it.
+  </p>
+  <p>
+    Alternatively, copy-pasting code directly into the TRRTL terminal will result in that code
+    being put into the code editor and executed immediately. You can also drag-and-drop files
+    from your computer into the terminal to upload and execute them, enabling you to write
+    code in your favourite text editor.
+  </p>
+
+  <h2 id="samples">Samples</h2>
+  <p>
+    Try any of the following examples to see what TRRTL is capable of or download the source
+    code of any to see it for yourself.
+  </p>
+  <ul>
+    <li>
+      <strong>rbcircle.logo</strong> -
+      <a href="../#UEsDBAoAAAAAAPZ6TU65thcHGQEAABkBAAABAAAAX1siI1xuIyByYmNpcmNsZS5sb2dvXG4jXG4jIERyYXdzIGEgaGFsZi1yZWQsIGhhbGYtYmx1ZSBjaXJjbGUgdXNpbmcgdGhlIGFyYyBjb21tYW5kXG4jXG5cbmNsZWFyKClcbmhvbWUoKVxuXG5mb3J3YXJkIDEwMFxucGVuIHVwXG5iYWNrd2FyZCAyMDBcbmZvcndhcmQgMTAwXG5wZW4gZG93blxuXG5jb2xvciAncmVkJ1xuZm9yIG4gaW4gWzEuLi4xMDBdXG4gIGFyYyAxODAsIG5cblxucmlnaHQgMTgwXG5cbmNvbG9yICdibHVlJ1xuZm9yIG4gaW4gWzEuLi4xMDBdXG4gIGFyYyAxODAsIG5cbiJdUEsBAhQACgAAAAAA9npNTrm2FwcZAQAAGQEAAAEAAAAAAAAAAAAAAAAAAAAAAF9QSwUGAAAAAAEAAQAvAAAAOAEAAAAA">execute</a> |
+      <a href="../samples/rbcircle.logo">download</a>
+      <br />
+      Uses two series' of concentric arcs to draw a circle; half-blue, half-red.
+    </li>
+    <li>
+      <strong>snail.logo</strong> -
+      <a href="../#UEsDBAoAAAAAAEF7TU7ErW7+gwQAAIMEAAABAAAAX1siI1xuIyBzbmFpbC5sb2dvXG4jXG4jIERyYXdzIGEgY3V0ZSBhbmQgb25seSBzbGlnaHRseSBodWdlLWhlYWRlZCBnYXN0cm9wb2QuXG4jXG5cbmNsZWFyKClcbmhvbWUoKVxudHVydGxlIGhpZGVcblxuIyBTaGVsbFxuY29sb3IgJ3llbGxvdydcbmZvciBuIGluIFsxLi4oMzYwICogMy43NSldXG4gIGZvcndhcmQgKG4gLyAzNjApXG4gIHJpZ2h0IDFcblxuIyBCb2R5IGFuZCBoZWFkXG5jb2xvciAnd2hpdGUnXG5mb3J3YXJkIDMwMFxuZm9yIG4gaW4gWzEuLjQ1XVxuICBmb3J3YXJkIDFcbiAgcmlnaHQgMVxuZm9yIG4gaW4gWzEuLjkwXVxuICBmb3J3YXJkIDJcbiAgcmlnaHQgMC41XG5mb3IgbiBpbiBbMS4uMTgwXVxuICBmb3J3YXJkIDJcbiAgcmlnaHQgMVxuZm9yd2FyZCA3XG5mb3IgbiBpbiBbMS4uMTgwXVxuICBmb3J3YXJkIDFcbiAgbGVmdCAwLjVcbmZvcndhcmQgODBcblxuIyBNb3ZlIHRvIHRhaWxcbnBlbiB1cFxuZm9yd2FyZCAxMzBcblxuIyBUYWlsXG5wZW4gZG93blxuZm9yd2FyZCA0MFxuZm9yIG4gaW4gWzEuLjkwXVxuICBmb3J3YXJkIDFcbiAgcmlnaHQgMVxuZm9yd2FyZCAxLjVcbnJpZ2h0IDkwXG5mb3J3YXJkIDIyNVxuXG4jIE1vdmUgdG8gZXllc1xucGVuIHVwXG5yaWdodCAzMlxuZm9yd2FyZCA0MTBcblxuIyBFeWVzXG5wZW4gZG93blxuY29sb3IgJ2xpZ2h0Z3JlZW4nXG5mb3IgbiBpbiBbMS4uMzYwXVxuICBmb3J3YXJkIDAuMlxuICByaWdodCAxXG5wZW4gdXBcbmxlZnQgMzJcbmJhY2t3YXJkIDYwXG5yaWdodCAzMlxucGVuIGRvd25cbmZvciBuIGluIFsxLi4zNjBdXG4gIGZvcndhcmQgMC4yXG4gIHJpZ2h0IDFcblxuIyBNb3ZlIHRvIGFudGVubmFcbnBlbiB1cFxuZm9yd2FyZCAxMDVcblxuIyBBbnRlbm5hXG5wZW4gZG93blxuY29sb3IgJ2xpZ2h0Ymx1ZSdcbmZvciBuIGluIFsxLi41OF1cbiAgZm9yd2FyZCAoMC4wNSAqIG4pXG4gIHJpZ2h0IDFcbmxlZnQgOTBcbmZvciBuIGluIFsxLi4zNjBdXG4gIGZvcndhcmQgMC4xXG4gIHJpZ2h0IDFcbnBlbiB1cFxuYmFja3dhcmQgMTg2XG5wZW4gZG93blxuZm9yIG4gaW4gWzEuLjM2MF1cbiAgZm9yd2FyZCAwLjFcbiAgcmlnaHQgMVxubGVmdCA5MFxuZm9yIG4gaW4gWzEuLjU4XVxuICBmb3J3YXJkICgwLjA1ICogKDU5LW4pKVxuICByaWdodCAxXG4iXVBLAQIUAAoAAAAAAEF7TU7ErW7+gwQAAIMEAAABAAAAAAAAAAAAAAAAAAAAAABfUEsFBgAAAAABAAEALwAAAKIEAAAAAA==">execute</a> |
+      <a href="../samples/snail.logo">download</a>
+      <br />
+      A slightly gormless-looking snail.
+    </li>
+    <li>
+      <strong>spiral-star.logo</strong> -
+      <a href="../#UEsDBAoAAAAAAFp7TU4ISv8CcAEAAHABAAABAAAAX1siI1xuIyBzcGlyYWwtc3Rhci5sb2dvXG4jXG4jIERyYXdzIGEgc3BpcmFsbGluZyBzdGFyIHJvdGF0aW5nIHRocm91Z2ggYSBzcGVjdHJ1bSBvZiByYW5kb20gY29sb3Vyc1xuI1xuXG5jbGVhcigpXG5ob21lKClcbnR1cnRsZSBoaWRlXG5cbnIxID0gTWF0aC5yYW5kb20oKSAqIDMwXG5yMiA9IE1hdGgucmFuZG9tKCkgKiAzMFxucjMgPSBNYXRoLnJhbmRvbSgpICogMzBcblxucmlnaHQgMThcblxuZm9yIG4gaW4gWzEuLjEwMF1cbiAgY29sb3IgXCJyZ2IoI3sobiAqIHIxKSAlIDI1NX0sICN7KDEwMCArIChuICogcjIpKSAlIDI1NX0sICN7KDIwMCArIChuICogcjMpKSAlIDI1NX0pXCJcbiAgZm9yd2FyZCBuICogNlxuICByaWdodCAxNDRcbiJdUEsBAhQACgAAAAAAWntNTghK/wJwAQAAcAEAAAEAAAAAAAAAAAAAAAAAAAAAAF9QSwUGAAAAAAEAAQAvAAAAjwEAAAAA">execute</a> |
+      <a href="../samples/spiral-star.logo">download</a>
+      <br />
+      Loops and variables produce a random variant on a rainbow star.
+    </li>
+  </ul>
+
+  <h2 id="license">License</h2>
+  <p>
+    TRRTL was written by <a href="https://danq.me/">Dan Q</a>.
+    It makes use of <a href="https://coffeescript.org/">CoffeeScript</a> and
+    <a href="https://stuk.github.io/jszip/">jsZIP</a> under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.
+    All other code is released into the public domain in accordance with <a href="https://unlicense.org/">The Unlicense</a>.
+  </p>
+</body>
+</html>

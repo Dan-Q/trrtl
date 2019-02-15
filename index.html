@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>TRRTL.COM - Coffee-drinking Logo turtles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="css/trrtl.css" />
+  <link rel="icon" type="image/png" href="/img/icons/trrtl.png" sizes="22x22" />
+  <link rel="manifest" href="/manifest.json" />
+</head>
+<body>
+  <noscript>
+    TRRTL.COM requires Javascript. That sucks, I know. Sorry.
+    You're welcome to <a href="help/">read the help</a> though.
+  </noscript>
+  <input autofocus="autofocus" type="password" value="" autocomplete="off" id="fake-focus" />
+  <textarea id="code" placeholder="Type a multiline program here
+Tip: you can also drag-drop a program file directly to this window to run it."></textarea>
+  <button id="run-code"><span>run</span></button>
+  <iframe id="help" src="help/"></iframe>
+  <canvas id="image"></canvas>
+  <canvas id="turtle"></canvas>
+  <div id="console"></div>
+
+  <button id="reset"><span>reset</span></button>
+  <button id="show-code"><span>code</span></button>
+  <button id="show-help"><span>help</span></button>
+  
+  <script type="text/javascript" src="js/coffeescript.min.js"></script>
+  <script type="text/javascript" src="js/jszip.min.js"></script>
+  <script type="text/javascript" src="js/trrtl.js?version=0.6"></script>
+  <script type="text/javascript" src="sw-register.js"></script>
+</body>
+</html>

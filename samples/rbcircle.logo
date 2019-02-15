@@ -1,0 +1,24 @@
+#
+# rbcircle.logo
+#
+# Draws a half-red, half-blue circle using the arc command
+#
+
+clear()
+home()
+
+forward 100
+pen up
+backward 200
+forward 100
+pen down
+
+color 'red'
+for n in [1...100]
+  arc 180, n
+
+right 180
+
+color 'blue'
+for n in [1...100]
+  arc 180, n

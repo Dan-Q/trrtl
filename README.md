@@ -3,6 +3,8 @@ TRRTL
 
 Reimagining of the graphical turtle of the Logo programming language as a Coffeescript-backed Progressive Web App.
 
+Read the full story at https://danq.me/trrtl
+
 ## Usage
 
 Visit [trrtl.com](https://trrtl.com/) to play with it in your browser. Click the "help" icon in the lower right for documentation on supported commands. Drag-drop or copy-paste code directly to the window to execute it; some samples are provided in the documentation. This app is capable of working entirely offline but will self-update in the background when running online; it's also capable of being installed as a desktop application.
@@ -33,8 +35,12 @@ Possible future developments include:
 
 * Finding workarounds to the "keypress" limitations in e.g. Chrome for Android
 * (Re)implementing more of the UCB Logo command set
+* Allowing for "delay" (like the original)
+* Facilitating multiline statements through the default console
 * "Multiplayer" turtling across a network using WebSockets or WebRTC
-* Communicating with a physical turtle using WebSockets, WebRTC, or the Web Bluetooth API
+* Communicating with a physical turtle (perhaps by adapting an off-the-shelf remote-controlled turtle by adding an Arduino or something) using WebSockets, WebRTC, or the Web Bluetooth API
+* Some kind of trainer/tutorial?
+* Command-buffer/history (and maybe even autocomplete?)
 
 Please feel free to fork or make pull requests with any of these in (pull requests must be unlicense-friendly).
 
